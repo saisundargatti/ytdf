@@ -1,0 +1,461 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #fffefc;
+  font-family: Nunito;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+.header h1 {
+  margin: 0px;
+  font-style: normal;
+  text-shadow: 1px 1px #999;
+  text-transform: uppercase;
+  width: 100%;
+}
+.header img {
+  max-width: 50px;
+  max-height: 50px;
+}
+.paste-paragraph {
+  width: 100%;
+  text-align: center;
+}
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  width: 600px;
+  margin-top: 30px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+.textarea-container {
+  text-align: left;
+}
+.textarea-container div {
+  text-align: center;
+  margin-bottom: 20px;
+}
+textarea {
+  width: 94%;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+#downloadButton {
+  color: #333;
+  background-color: transparent;
+  border-style: none;
+  outline: none;
+  box-shadow: none;
+}
+#downloadButton img {
+  width: 20px;
+  height: 20px;
+}
+.button-holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+}
+.button-holder p {
+  text-align: center;
+  margin-right: 125px;
+}
+button {
+  padding: 10px 20px;
+  background-color: #fd7c47;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: Helvetica, sans-serif, Arial, PT-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+  min-width: 64px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px #0000004d;
+}
+
+button:hover {
+  background-color: #d8693d;
+}
+
+.formatted-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  min-height: 300px;
+}
+.copy-icon img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+#formattedTranscript {
+  text-align: left;
+}
+
+#countInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
+.about-us-container {
+  width: 100%;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+}
+.about-us-container h2 {
+  font-family: Nunito;
+  color: #333;
+  text-align: center;
+  width: 600px;
+}
+.about-us-container p {
+  width: 400px;
+}
+.about-us-container img {
+  max-height: 120px;
+  max-width: 120px;
+  border-radius: 70px;
+  margin-right: 10px;
+}
+.about-us-holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.how-it-works-container {
+  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  width: 600px;
+  box-sizing: border-box;
+  padding: 0;
+  margin-top: 30px;
+}
+.about-us-container p {
+  margin: 0px;
+  padding: 8px;
+}
+.faq-container {
+  display: flex;
+  cursor: pointer;
+  width: 600px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.faq-image img {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 20px;
+}
+
+.faq-content {
+  flex-grow: 1;
+}
+.faq-content h1 {
+  margin: 0px;
+  font-style: normal;
+  text-shadow: 1px 1px #999;
+  width: 100%;
+  text-align: center;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.faq-question {
+  font-weight: bold;
+  cursor: pointer;
+  color: #003366;
+  margin-left: 10px;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  font-family: Nunito;
+  font-size: 18px;
+  padding-left: 40px;
+}
+
+.show-answer {
+  max-height: 200px;
+}
+.faq-image {
+  width: 20px;
+  margin-right: 10px;
+}
+.faq-container h1 {
+  margin-bottom: 30px;
+}
+footer {
+  background-color: #333;
+  color: white;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: auto;
+  padding: 20px;
+}
+
+.footer-section-about {
+  max-width: 400px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+
+.footer-section h4 {
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+.button-container {
+  display: flex;
+  flex-direction: row;
+}
+.bookmark-button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  background-color: #fff;
+  color: #fd7c47;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.bookmark-button img {
+  max-width: 20px;
+  max-height: 20px;
+  margin: 0px 5px;
+}
+.footer-button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  background-color: #1a73e8; /* Google blue */
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.footer-button:hover {
+  background-color: #0b59d1; /* A darker blue for hover effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+  }
+
+  .footer-button {
+    margin-bottom: 10px; /* Stack buttons vertically on smaller screens */
+  }
+}
+ul li a {
+  color: #999;
+}
+.copyright {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-top: 1px solid #999;
+  height: 40px;
+  padding: 10px;
+}
+.your-toast-container {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  transition: top 0.5s;
+  display: none;
+}
+
+.your-toast {
+  font-size: 18px;
+}
+.input-container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 600px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#submit-button {
+  padding: 5px 10px;
+  background-color: #fd7c47;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#submit-button:hover {
+  background-color: #d8693d;
+}
+/* Select the h2 element */
+h2 {
+  /* Set the font size and color of the heading */
+  font-size: 24px;
+  color: #333;
+}
+
+/* Select the ul element */
+.how-it-works-container {
+  /* Set the margin and padding of the list */
+  margin: 20px 0;
+  padding: 0;
+  list-style-type: none;
+}
+.how-it-works-container img {
+  max-width: 20px;
+  max-height: 20px;
+  margin: 0px 5px;
+}
+
+/* Select the li element */
+.how-it-works-lines {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 18px;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Select the li element when the user hovers over it */
+.how-it-works-lines:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.share-buttons button {
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: none;
+}
+
+.share-buttons button img {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+.paragraph {
+  text-align: center;
+  width: 600px;
+}
+.icon:hover::after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  white-space: nowrap;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}

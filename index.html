@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>YouTube Transcript Download</title>
+  <meta name="description"
+    content="Streamline YouTube transcript formatting and download with YouTube Transcript Download. Enhance YouTube transcripts by converting them into well-structured paragraphs and eliminating line breaks. With a single click, download or copy the transcript seamlessly.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito" />
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link rel="icon" href="./assets/_618937ee-29b6-4bf0-b3eb-a988e9744ad5-removebg-preview.png" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/compromise@13"></script>
+</head>
+
+<body>
+  <div class="header">
+    <img src="./assets/_618937ee-29b6-4bf0-b3eb-a988e9744ad5-removebg-preview.png" alt="logo" />
+    <h1>YouTube Transcript Download</h1>
+  </div>
+  <div class="card">
+    <div class="input-container">
+      <input type="text" id="youtube-url" placeholder="Paste YouTube Video URL">
+      <button id="submit-button">
+        Submit
+      </button>
+    </div>
+    <p class="paste-paragraph"> or Paste your YouTube transcript below</p>
+    <div class="textarea-container">
+      <textarea id="transcript" rows="10" cols="50" placeholder="Paste here..."></textarea>
+      <div><button id="formatButton">Format Transcript</button></div>
+    </div>
+    <div class="formatted-container">
+      <div class="button-holder">
+        <p>Formatted Transcript</p>
+        <button id="downloadButton" class="download-button" title="Download">
+          <img
+            src="https://res.cloudinary.com/dlvc5pfmx/image/upload/v1699385755/down-arrow-download-free-icon-14_pl15sm.png"
+            alt="download" />
+        </button>
+        <span class="copy-icon" id="copyButton" title="Copy">
+          <img src="https://res.cloudinary.com/dlvc5pfmx/image/upload/v1699199214/copy-svgrepo-com_pj5lcc.svg"
+            alt="Copy to Clipboard" />
+        </span>
+      </div>
+      <hr />
+      <div id="formattedTranscript" contenteditable="true"></div>
+    </div>
+    <div id="countInfo">
+      <p>Character Count: <span id="charCount">0</span></p>
+      <p>Word Count: <span id="wordCount">0</span></p>
+      <div>
+        <button id="clearButton">Clear</button>
+      </div>
+    </div>
+  </div>
+  <div class="how-it-works-container">
+    <h2>How it Works</h2>
+    <ul class="how-it-works-container">
+      <li class="how-it-works-lines"><img src="./assets/symbole-fleche-droite-orange.png"
+          alt="youtube transcript download" />Paste the youtube
+        video link in the input field and click on the 'Submit' button.</li>
+      <li class="how-it-works-lines"><img src="./assets/symbole-fleche-droite-orange.png"
+          alt="youtube transcript download" />The transcript
+        will be
+        automatically retrieved and displayed in the input field.</li>
+      <li class="how-it-works-lines"><img src="./assets/symbole-fleche-droite-orange.png"
+          alt="youtube transcript download" />or Paste copied
+        YouTube video transcript to format.</li>
+      <li class="how-it-works-lines"><img src="./assets/symbole-fleche-droite-orange.png"
+          alt="youtube transcript download" />Click the 'Format'
+        button to make it more readable.</li>
+      <li class="how-it-works-lines"><img src="./assets/symbole-fleche-droite-orange.png"
+          alt="youtube transcript download" />See the formatted
+        transcript with paragraph breaks.</li>
+      <li class="how-it-works-lines"><img src="./assets/symbole-fleche-droite-orange.png"
+          alt="youtube transcript download" />You can count
+        characters and words in the formatted text.</li>
+      <li class="how-it-works-lines"><img src="./assets/symbole-fleche-droite-orange.png"
+          alt="youtube transcript download" />Click the 'Download'
+        Icon to Downlaod the formatted Transcript</li>
+      <li class="how-it-works-lines">
+        <img src="./assets/symbole-fleche-droite-orange.png" alt="youtube transcript download" />Use the 'Copy' Icon
+        to easily copy the formatted text to your
+        clipboard.
+      </li>
+      <li class="how-it-works-lines">
+        <img src="./assets/symbole-fleche-droite-orange.png" alt="youtube transcript download" />Click the 'Clear'
+        button to erase the transcript and formatted text.
+      </li>
+    </ul>
+  </div>
+  <p class="paragraph">Help us grow by sharing the website link! Click on the social media icons to share the goodness
+    with your
+    friends
+    and
+    colleagues </p>
+  <div class="share-buttons">
+    <button>
+      <a href="https://www.facebook.com/share.php?u=https://youtubetranscriptdownload.com" target="_blank">
+        <img src="./assets/facebook-social-media-svgrepo-com (1).svg" alt="Facebook" title="Share on Facebook">
+      </a>
+    </button>
+    <button>
+      <a href="https://twitter.com/intent/tweet?url=https://youtubetranscriptdownload.com" target="_blank">
+        <img src="./assets/twitter-social-media-svgrepo-com.svg" alt="Twitter" title="Share on Twitter">
+      </a>
+    </button>
+    <button>
+      <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20website:%20https://youtubetranscriptdownload.com"
+        target="_blank">
+        <img src="./assets/whatsapp-social-media-svgrepo-com.svg" alt="WhatsApp" title="Share on WhatsApp">
+      </a>
+    </button>
+    <button>
+      <a
+        href="mailto:?to=&subject=Check%20out%20this%20website&body=Hi,%20I%20thought%20you%20might%20be%20interested%20in%20this%20website:%20https://youtubetranscriptdownload.com">
+        <img src="./assets/9810011.png" alt="email" title="Share on Email">
+      </a>
+    </button>
+  </div>
+  <div class="about-us-container" id="about-us">
+    <h2>Free Youtube Transcript Download</h2>
+    <div class="about-us-holder">
+      <img src="./assets/_82ddfdde-61c3-4c78-aadf-f93692eac212.jpg" alt="about-us" />
+      <p>
+        Youtube Transcript Download improves YouTube transcripts. They're neatly formatted into paragraphs, no
+        line
+        breaks. Download or copy with one click. Useful for students, researchers, and content creators.
+      </p>
+    </div>
+  </div>
+  <div class="faq-container">
+    <div class="faq-content">
+      <h1>Frequently Asked Questions</h1>
+      <div class="faq-item">
+        <h3 class="faq-question">
+          <img src="https://res.cloudinary.com/dlvc5pfmx/image/upload/v1699283100/5093064_yiddnh.png" alt="faq"
+            class="faq-image" />What does this tool do?
+        </h3>
+        <div class="faq-answer" id="answer1">
+          It takes the transcripts and formats them into clear paragraphs, without any line breaks. You can also
+          download or copy
+          the formatted transcript with one click
+        </div>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">
+          <img src="https://res.cloudinary.com/dlvc5pfmx/image/upload/v1699283100/5093064_yiddnh.png" alt="faq"
+            class="faq-image" />
+          Is it free to use?
+        </h3>
+        <div class="faq-answer" id="answer2">
+          Yes, our tool is completely free to use.
+        </div>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">
+          <img src="https://res.cloudinary.com/dlvc5pfmx/image/upload/v1699283100/5093064_yiddnh.png" alt="faq"
+            class="faq-image" />How do I copy the formatted transcript?
+        </h3>
+        <div class="faq-answer" id="answer3">
+          You can click the 'Copy' icon button to copy the text to your clipboard.
+        </div>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">
+          <img src="https://res.cloudinary.com/dlvc5pfmx/image/upload/v1699283100/5093064_yiddnh.png" alt="faq"
+            class="faq-image" />How do I download the formatted transcript?
+        </h3>
+        <div class="faq-answer" id="answer4">
+          You can click the 'Download' icon button to download the transcript.
+        </div>
+      </div>
+      <!-- Add more FAQ items here -->
+    </div>
+  </div>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section-about">
+        <h4>Youtube Transcript Download</h4>
+        <p>Downloading YouTube transcripts and presenting them in a more reader-friendly manner.</p>
+        <div class="button-container">
+          <button class="bookmark-button" id="bookmarkButton">
+            <img src="https://res.cloudinary.com/dlvc5pfmx/image/upload/v1699294530/2899445_jhxzio.png" alt="bookmark">
+            Bookmark
+          </button>
+          <div class="your-toast-container" id="your-toast-container">
+            <div class="your-toast">
+              <span id="your-toast-message">Press Ctrl + D to bookmark</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="#about-us">About Us</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Tools</h4>
+        <ul>
+          <ul>
+            <li>
+              <a href="youtube-transcript-formatter.html">Youtube Transcript Download</a>
+            </li>
+            <li>
+              <a href="https://threadgenerator.web.app" target="_blank">Twitter Thread Generator</a>
+            </li>
+          </ul>
+
+          <!-- ... other items ... -->
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p>
+          Need help or have a question? Contact us at:
+          saivenkatkumar365@gmail.com
+        </p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Copyright@YoutubeTranscriptDownload</p>
+    </div>
+  </footer>
+  <script type="module" src="script.js">
+  </script>
+</body>
+
+</html>
