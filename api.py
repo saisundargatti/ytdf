@@ -53,5 +53,4 @@ def process_youtube_url():
     except Exception as e:
         return jsonify({'message': 'Error processing the request', 'error': str(e)}), 500
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
