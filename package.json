@@ -2,7 +2,6 @@
   "type": "module",
   "dependencies": {
     "compromise": "^14.10.0",
-    "nlp": "^0.0.0",
-    "python-shell": "^5.0.0"
+    "nlp": "^0.0.0"
   }
 }

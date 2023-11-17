@@ -33,17 +33,22 @@ body {
 .card {
   background-color: #fff;
   border-radius: 8px;
+  border-color: #d8693d;
+  border-style: solid;
+  border-width: 1px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
   text-align: center;
-  width: 600px;
+  max-width: 600px;
   margin-top: 30px;
 }
 
 h1 {
   font-size: 24px;
 }
-
+#error {
+  color: red;
+}
 .textarea-container {
   text-align: left;
 }
@@ -97,10 +102,16 @@ button {
   padding: 6px 8px;
   border-radius: 4px;
   box-shadow: 1px 1px 2px #0000004d;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
   background-color: #d8693d;
+}
+
+button:active {
+  background-color: #b25635; /* Darker color on click, you can customize this */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adjust the box shadow on click, you can customize this */
 }
 
 .formatted-container {
@@ -246,6 +257,7 @@ footer {
 
 .footer-container {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   align-items: flex-start;
   margin: auto;
@@ -276,7 +288,7 @@ footer {
 }
 
 .footer-section ul li {
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 .button-container {
   display: flex;
@@ -314,21 +326,6 @@ footer {
   background-color: #0b59d1; /* A darker blue for hover effect */
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-section {
-    margin-bottom: 20px;
-  }
-
-  .footer-button {
-    margin-bottom: 10px; /* Stack buttons vertically on smaller screens */
-  }
-}
 ul li a {
   color: #999;
 }
@@ -458,4 +455,92 @@ h2 {
   color: white;
   padding: 5px;
   border-radius: 5px;
+}
+h2 {
+  text-align: center;
+}
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    padding-top: 10px; /* Adjust padding for better spacing */
+  }
+
+  .header h1 {
+    width: auto; /* Allow the text to wrap */
+  }
+
+  .header img {
+    max-width: 90%; /* Make the image responsive */
+  }
+
+  .paste-paragraph,
+  .card {
+    width: 90%; /* Make these elements full width on smaller screens */
+    max-width: 400px;
+  }
+
+  .card {
+    margin-top: 20px; /* Adjust margin for better spacing */
+  }
+
+  .button-holder {
+    flex-direction: row;
+    align-items: center;
+  }
+  .button-holder p {
+    margin-right: 30px;
+  }
+
+  button {
+    margin: 10px 0; /* Add margin to the button for better spacing */
+  }
+  .about-us-holder {
+    width: 90%;
+  }
+  .faq-container {
+    width: 90%;
+  }
+  .faq-item {
+    width: 90%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+  }
+
+  .footer-button {
+    margin-bottom: 10px; /* Stack buttons vertically on smaller screens */
+  }
+
+  .how-it-works-container,
+  .how-it-works-lines {
+    width: 90%; /* Make these elements full width on smaller screens */
+  }
+
+  .how-it-works-container img {
+    margin: 0 5px;
+  }
+
+  .share-buttons {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .share-buttons button {
+    margin-bottom: 10px; /* Stack share buttons vertically on smaller screens */
+  }
+
+  .paragraph {
+    width: 90%; /* Make the paragraph full width on smaller screens */
+  }
+  .input-container {
+    width: 90%;
+  }
 }

@@ -1,47 +1,65 @@
 document.addEventListener("DOMContentLoaded", function () {
   const submitButton = document.getElementById("submit-button");
   // Function to make an API call to get the transcript
-  function fetchTranscript(youtubeURL) {
-    // Show the loader while the API call is in progress
-    submitButton.innerText = "Loading..";
+  async function fetchTranscript(youtubeURL) {
+    try {
+      // Show the loader while the API call is in progress
+      submitButton.innerText = "Loading..";
 
-    // Disable the button while the API call is in progress
-    submitButton.disabled = true;
+      // Disable the button while the API call is in progress
+      submitButton.disabled = true;
 
-    const payload = {
-      youtubeURL: youtubeURL,
-    };
-    let url = "http://127.0.0.1:5000";
+      const payload = {
+        youtubeURL: youtubeURL,
+      };
+      let url = "http://127.0.0.1:5000";
 
-    fetch(`${url}/download_transcript`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json(); // Assuming the response is in JSON format
-      })
-      .then((data) => {
-        if (data) {
-          document.getElementById("transcript").value = "";
-          document.getElementById("transcript").value = data.results;
-        } else {
-          console.error("Empty or malformed response data.");
-        }
-      })
-      .catch((error) => {
-        console.log("Error:", error);
-      })
-      .finally(() => {
-        submitButton.innerText = "Submit";
-        // Re-enable the button
-        submitButton.disabled = false;
+      let response = await fetch(`${url}/download_transcript`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
+      const data = await response.json();
+
+      switch (data.message) {
+        case "Processed successfully":
+          // If the transcript is available, set the transcript
+          document.getElementById("transcript").value = data.results;
+          document.getElementById("error").innerText = ""; // Clear any previous errors
+          break;
+
+        case "No Transcript":
+          // If no transcript is available, set an error message
+          document.getElementById("transcript").value = "";
+          document.getElementById("error").innerText = "No Transcript";
+          break;
+
+        case "Invalid YouTube URL or video ID not found.":
+          // Handle the case of an invalid YouTube URL or video ID not found
+          document.getElementById("transcript").value = "";
+          document.getElementById("error").innerText =
+            "Invalid YouTube URL or video ID not found.";
+          break;
+
+        default:
+          // Handle any other unexpected cases
+          document.getElementById("transcript").value = "";
+          document.getElementById("error").innerText = "Unexpected error";
+          console.error("Unexpected response:", data);
+      }
+    } catch (error) {
+      // Handle unexpected errors during the API call
+      document.getElementById("transcript").value = "";
+      document.getElementById("error").innerText =
+        "Unexpected error during API call";
+      console.error("Unexpected error details:", error);
+    } finally {
+      submitButton.innerText = "Submit";
+      // Re-enable the button
+      submitButton.disabled = false;
+    }
   }
 
   // Event listener for the "Submit" button
